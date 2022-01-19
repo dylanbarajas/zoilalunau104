@@ -1,0 +1,142 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="card card-body">
+    <form action="/actualizarpersona/{{personas.0}}" method="POST">
+        <ul>
+
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nombres</label>
+                    <input type="text" name="inputnombreact" id="inputnombre" class="form-control"
+                        placeholder="Ej: Zoila" value="{{personas.1}}">
+                </div>
+
+            </li>
+
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" name="inputapellidoact" id="inputapellido"
+                        placeholder="Ej: Luna" value="{{personas.2}}">
+
+                </div>
+            </li>
+
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Cédula</label>
+                    <input type="text" class="form-control" name="inputcedulaact" id="inputcedula"
+                        placeholder="Ej: 123456789" value="{{personas.3}}">
+
+                </div>
+            </li>
+
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Telefono</label>
+                    <input type="text" class="form-control" name="inputtelefonoact" id="inputtelefono"
+                        placeholder="Ej: 3001234567" value="{{personas.4}}">
+
+                </div>
+            </li>
+
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="inputemailact" id="inputemail"
+                        placeholder="ejemplo@ejemplo.com" value="{{personas.5}}">
+
+                </div>
+            </li>
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Lugar de votación</label>
+                    <input type="text" class="form-control" name="inputvotacionact" id="inputvotación"
+                        placeholder="Ej: IED El Cerro" value="{{personas.6}}">
+
+                </div>
+            </li>
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Mesa</label>
+                    <input type="text" class="form-control" name="inputmesaact" id="inputmesa" placeholder="Ej: 02"
+                        value="{{personas.7}}">
+
+                </div>
+            </li>
+
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Líder</label>
+                    <select class="form-select" aria-label="Default select example" name="selectlideract">
+
+                        {% for i in lideres %}
+                        <option value="1">{{i[1]}} {{i[2]}}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+            </li>
+
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Municipio</label>
+                    <select class="form-select" aria-label="Default select example" name="selectmunicipioact">
+                        <option value="{{personas.9}}">{{personas.9}}</option>
+                        <option value="SANTA MARTA">SANTA MARTA</option>
+                        <option value="ALGARROBO">ALGARROBO</option>
+                        <option value="ARACATACA">ARACATACA</option>
+                        <option value="ARIGUANÍ">ARIGUANÍ</option>
+                        <option value="CERRO DE SAN ANTONIO">CERRO DE SAN ANTONIO</option>
+                        <option value="CHIBOLO">CHIBOLO</option>
+                        <option value="CIENAGA">CIENAGA</option>
+                        <option value="CONCORDIA">CONCORDIA</option>
+                        <option value="EL BANCO">EL BANCO</option>
+                        <option value="EL PIÑÓN">EL PIÑÓN</option>
+                        <option value="EL RETÉN">EL RETÉN</option>
+                        <option value="FUNDACIÓN">FUNDACIÓN</option>
+                        <option value="GUAMAL">GUAMAL</option>
+                        <option value="NUEVA GRANADA">NUEVA GRANADA</option>
+                        <option value="PEDRAZA">PEDRAZA</option>
+                        <option value="PIJIÑO DEL CARMEN">PIJIÑO DEL CARMEN</option>
+                        <option value="PIVIJAI">PIVIJAI</option>
+                        <option value="PLATO">PLATO</option>
+                        <option value="PUEBLOVIEJO">PUEBLOVIEJO</option>
+                        <option value="REMOLINO">REMOLINO</option>
+                        <option value="SABANAS DE SAN ÁNGEL">SABANAS DE SAN ÁNGEL</option>
+                        <option value="SALAMINA">SALAMINA</option>
+                        <option value="SAN SEBASTIÁN DE BUENAVISTA">SAN SEBASTIÁN DE BUENAVISTA</option>
+                        <option value="SANTA ANA">SANTA ANA</option>
+                        <option value="SANTA BÁRBARA DE PINTO">SANTA BÁRBARA DE PINTO</option>
+                        <option value="SAN ZENÓN">SAN ZENÓN</option>
+                        <option value="SITIO NUEVO">SITIO NUEVO</option>
+                        <option value="TENERIFE">TENERIFE</option>
+                        <option value="ZAPAYÁN">ZAPAYÁN</option>
+                        <option value="ZONA BANANERA">ZONA BANANERA</option>
+
+                    </select>
+
+                </div>
+            </li>
+
+            <li>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Barrio</label>
+                    <input type="text" class="form-control" id="inputbarrioact" placeholder="Ej: El Pando"
+                        name="inputbarrioact" value="{{personas.10}}">
+
+                </div>
+            </li>
+
+        </ul>
+
+        <div class="centrarbutton">
+            <button type="submit" class="buttonregistro">
+                Actualizar
+            </button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

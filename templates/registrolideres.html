@@ -1,0 +1,189 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+
+
+
+<div class="row">
+    <div class="col-md-5">
+        {% with messages=get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="card card-body">
+            <form action="/agglider" class="registro" method="POST">
+                <h1 style="padding: 20px;">Registro de líderes:</h1>
+
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" name="nombrelider" id="inputnombre" placeholder="Ej: Zoila"
+                        required>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" name="apellidolider" id="inputapellido"
+                        placeholder="Ej: Luna" required>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1" class="form-label">Cédula</label>
+                    <input type="text" class="form-control" name="cedulalider" id="inputcedula"
+                        placeholder="Ej: 123456789" required>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1" class="form-label">Telefono</label>
+                    <input type="text" class="form-control" name="telefonolider" id="inputtelefono"
+                        placeholder="Ej: 3001234567" required>
+
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1" class="form-label">Municipio</label>
+                    <select class="form-select" aria-label="Default select example" name="municipiolider" required>
+                        <option>Escoja el municipio</option>
+                        <option value="SANTA MARTA">SANTA MARTA</option>
+                        <option value="ALGARROBO">ALGARROBO</option>
+                        <option value="ARACATACA">ARACATACA</option>
+                        <option value="ARIGUANÍ">ARIGUANÍ</option>
+                        <option value="CERRO DE SAN ANTONIO">CERRO DE SAN ANTONIO</option>
+                        <option value="CHIBOLO">CHIBOLO</option>
+                        <option value="CIENAGA">CIENAGA</option>
+                        <option value="CONCORDIA">CONCORDIA</option>
+                        <option value="EL BANCO">EL BANCO</option>
+                        <option value="EL PIÑÓN">EL PIÑÓN</option>
+                        <option value="EL RETÉN">EL RETÉN</option>
+                        <option value="FUNDACIÓN">FUNDACIÓN</option>
+                        <option value="GUAMAL">GUAMAL</option>
+                        <option value="NUEVA GRANADA">NUEVA GRANADA</option>
+                        <option value="PEDRAZA">PEDRAZA</option>
+                        <option value="PIJIÑO DEL CARMEN">PIJIÑO DEL CARMEN</option>
+                        <option value="PIVIJAI">PIVIJAI</option>
+                        <option value="PLATO">PLATO</option>
+                        <option value="PUEBLOVIEJO">PUEBLOVIEJO</option>
+                        <option value="REMOLINO">REMOLINO</option>
+                        <option value="SABANAS DE SAN ÁNGEL">SABANAS DE SAN ÁNGEL</option>
+                        <option value="SALAMINA">SALAMINA</option>
+                        <option value="SAN SEBASTIÁN DE BUENAVISTA">SAN SEBASTIÁN DE BUENAVISTA</option>
+                        <option value="SANTA ANA">SANTA ANA</option>
+                        <option value="SANTA BÁRBARA DE PINTO">SANTA BÁRBARA DE PINTO</option>
+                        <option value="SAN ZENÓN">SAN ZENÓN</option>
+                        <option value="SITIO NUEVO">SITIO NUEVO</option>
+                        <option value="TENERIFE">TENERIFE</option>
+                        <option value="ZAPAYÁN">ZAPAYÁN</option>
+                        <option value="ZONA BANANERA">ZONA BANANERA</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1" class="form-label">Barrio</label>
+                    <input type="text" class="form-control" id="inputbarrio" placeholder="Ej: El Pando"
+                        name="barriolider" required>
+
+                </div>
+
+
+                <br>
+
+                <div class="centrarbutton">
+                    <button class="btn btn-success btn-block">
+                        Registrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <!--
+        <form class="d-flex" style="padding: 20px; margin: 20px;" action="">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>-->
+        <br>
+        <table class="table table table-striped table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Cédula</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Municipio</th>
+                    <th scope="col">Barrio</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in lideres %}
+                <tr>
+                    <td> {{ i.1 }}</td>
+                    <td> {{ i.2 }}</td>
+                    <td> {{ i.3 }}</td>
+                    <td> {{ i.4 }}</td>
+                    <td> {{ i.5 }}</td>
+                    <td> {{ i.6 }}</td>
+
+                    <td>
+                        <a class="btn btn-secondary" href="/editarlider/{{i.0}}">Editar</a>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Eliminar
+                          </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ¿Seguro deseas borrar el registro?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <a class="btn btn-danger" href="/eliminarlider/{{i.0}}">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

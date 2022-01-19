@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="card card-body">
+    <form action="/actualizarlider/{{lideres.0}}" method="POST">
+        <h1 style="padding: 20px;">Registro líderes:</h1>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="form-label">Nombres</label>
+            <input type="text" class="form-control" name="nombrelideract" id="inputnombre" placeholder="Ej: Zoila"
+                value="{{lideres.1}}">
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" name="apellidolideract" id="inputapellido" placeholder="Ej: Luna"
+                value="{{lideres.2}}">
+
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="form-label">Cédula</label>
+            <input type="text" class="form-control" name="cedulalideract" id="inputcedula" placeholder="Ej: 123456789"
+                value="{{lideres.3}}">
+
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="form-label">Telefono</label>
+            <input type="text" class="form-control" name="telefonolideract" id="inputtelefono" placeholder="Ej: 3001234567"
+                value="{{lideres.4}}">
+
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="form-label">Municipio</label>
+            <select class="form-select" aria-label="Default select example" name="municipiolideract" value="{{lideres.5}}">
+                <option value="{{lideres.5}}">{{lideres.5}}</option>
+                <option value="SANTA MARTA">SANTA MARTA</option>
+                <option value="ALGARROBO">ALGARROBO</option>
+                <option value="ARACATACA">ARACATACA</option>
+                <option value="ARIGUANÍ">ARIGUANÍ</option>
+                <option value="CERRO DE SAN ANTONIO">CERRO DE SAN ANTONIO</option>
+                <option value="CHIBOLO">CHIBOLO</option>
+                <option value="CIENAGA">CIENAGA</option>
+                <option value="CONCORDIA">CONCORDIA</option>
+                <option value="EL BANCO">EL BANCO</option>
+                <option value="EL PIÑÓN">EL PIÑÓN</option>
+                <option value="EL RETÉN">EL RETÉN</option>
+                <option value="FUNDACIÓN">FUNDACIÓN</option>
+                <option value="GUAMAL">GUAMAL</option>
+                <option value="NUEVA GRANADA">NUEVA GRANADA</option>
+                <option value="PEDRAZA">PEDRAZA</option>
+                <option value="PIJIÑO DEL CARMEN">PIJIÑO DEL CARMEN</option>
+                <option value="PIVIJAI">PIVIJAI</option>
+                <option value="PLATO">PLATO</option>
+                <option value="PUEBLOVIEJO">PUEBLOVIEJO</option>
+                <option value="REMOLINO">REMOLINO</option>
+                <option value="SABANAS DE SAN ÁNGEL">SABANAS DE SAN ÁNGEL</option>
+                <option value="SALAMINA">SALAMINA</option>
+                <option value="SAN SEBASTIÁN DE BUENAVISTA">SAN SEBASTIÁN DE BUENAVISTA</option>
+                <option value="SANTA ANA">SANTA ANA</option>
+                <option value="SANTA BÁRBARA DE PINTO">SANTA BÁRBARA DE PINTO</option>
+                <option value="SAN ZENÓN">SAN ZENÓN</option>
+                <option value="SITIO NUEVO">SITIO NUEVO</option>
+                <option value="TENERIFE">TENERIFE</option>
+                <option value="ZAPAYÁN">ZAPAYÁN</option>
+                <option value="ZONA BANANERA">ZONA BANANERA</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="form-label">Barrio</label>
+            <input type="text" class="form-control" id="inputbarrio" placeholder="Ej: El Pando" name="barriolideract"
+                value="{{lideres.6}}">
+
+        </div>
+
+
+
+        <div class="centrarbutton">
+            <button class="buttonregistro">
+                Registrar
+            </button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
