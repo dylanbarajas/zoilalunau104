@@ -195,7 +195,7 @@ def actualizarlider(id2):
             cursor=mysql.connection.cursor()
             cursor.execute("""UPDATE lideres SET nombres=%s, apellidos=%s, cedula=%s, telefono=%s, municipio=%s, barrio=%s WHERE id=%s """, 
             (nombre,apellidos,cedula,telefono,municipio,barrio,id2))
-            mysql.connectioncommit()
+            mysql.connection.commit()
             flash('Líder actualizado exitosamente')
             return redirect(url_for('registrolideres'))
 
