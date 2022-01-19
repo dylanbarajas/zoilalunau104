@@ -9,10 +9,10 @@ import hashlib
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST']='localhost'
-app.config['MYSQL_USER']='root'
-app.config['MYSQL_PASSWORD']='ing.dylan1'
-app.config['MYSQL_DB']='elecciones'
+app.config['MYSQL_HOST']='kutnpvrhom7lki7u.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_USER']='eua8ryreprz7pmqe'
+app.config['MYSQL_PASSWORD']='rl6oz9bag1ub07g1'
+app.config['MYSQL_DB']='icd69vrm68ife5dp'
 
 mysql=MySQL(app)
 
