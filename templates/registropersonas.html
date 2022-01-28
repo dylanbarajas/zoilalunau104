@@ -58,27 +58,27 @@
                         votación
                     </label>
                     <input type="text" class="form-control" name="inputvotacion" id="inputvotación"
-                        placeholder="Ej: IED El Cerro" required>
+                        placeholder="Ej: IED El Cerro" >
 
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1" class="form-label">Mesa</label>
-                    <input type="text" class="form-control" name="inputmesa" id="inputmesa" placeholder="Ej: 02"
-                        required>
+                    <input type="text" class="form-control" name="inputmesa" id="inputmesa" placeholder="Ej: 02">
 
                 </div>
 
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1" class="form-label">Líder</label>
-                    <select class="form-select" aria-label="Default select example" name="selectlider" required>
+                    <!--<select class="form-select" aria-label="Default select example" name="selectlider" required>
                         <option>Escoja el líder</option>
                         {% for i in lideres %}
                         <option value="{{i[1],i[2]}}">{{i[1]}} {{i[2]}}</option>
 
                         {% endfor %}
-                    </select>
+                    </select>-->
+                    <input type="text" class="form-control" name="selectlider" placeholder="Ingrese el líder" required>
                 </div>
 
                 <div class="form-group">
