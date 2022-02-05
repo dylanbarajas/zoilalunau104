@@ -69,8 +69,9 @@ def registropersonas():
         data=cursor.fetchall()
         cursor.execute('SELECT * FROM lideres')
         data2=cursor.fetchall()
+        numero=cursor.execute('SELECT * FROM personas')
         cursor.close()
-        return render_template('registropersonas.html', personas=data, lideres=data2)
+        return render_template('registropersonas.html', conteo=numero, personas=data, lideres=data2)
     else:
         return 'No ha iniciado sesión' 
      
